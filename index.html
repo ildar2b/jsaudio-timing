@@ -47,6 +47,8 @@ $("#pause").click(function() {
 // Ok Отрывок из длинного файла
 $("#play5s").click(function() {
 	
+	// При самом первом воспроизведении
+	// не работает
 	myAudio.play();
 	var to1 = setTimeout(function() {
 		myAudio.pause();
