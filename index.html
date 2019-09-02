@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+	<!-- Открыть на мобильных устройствах в масштабе 1:1 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Audio</title>
+</head>
+
+
+<body>
+
+<audio id="my-audio">
+	<source src="speechRu.mp3" type="audio/mp3">
+</audio>
+
+<h1>Audio</h1>
+<h2 id="play">Play</h2>
+<h2 id="pause">Pause</h2>
+<p>&nbsp;
+<h2 id="play5s">Play "Number 15"</h2>
+<p id="info">...
+
+
+<script>
+
+var myAudio = document.getElementById('my-audio');
+
+$("#play").click(function() {
+	var start = performance.now();
+	myAudio.play();
+	var stop = performance.now();
+	console.log(start);
+	console.log(stop);
+	console.log(stop - start);
+	$("#info").text(stop - start);
+});
+
+$("#pause").click(function() {
+  myAudio.pause();
+});
+
+
+// Ok Отрывок из длинного файла
+$("#play5s").click(function() {
+	var start = performance.now();
+		myAudio.currentTime = 30;
+		myAudio.play();
+	var stop = performance.now();
+	console.log(start);
+	console.log(stop);
+	console.log(stop - start);
+	$("#info").text(stop - start);
+		setTimeout(function() {
+			myAudio.pause();
+		}, 1000);
+
+});
+
+	
+</script>
+
+</body>
+</html>
