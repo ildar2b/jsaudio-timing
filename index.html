@@ -22,7 +22,7 @@
 <p>&nbsp;
 <h2 id="play5s">Play "Number 15"</h2>
 <p id="info">...
-<p>[2.09.2019 17:31]
+<p>[2.09.2019 17:55]
 
 
 <script>
@@ -46,8 +46,10 @@ $("#pause").click(function() {
 // Ok Отрывок из длинного файла
 $("#play5s").click(function() {
 	var start = performance.now();
+		myAudio.addEventListener("seeked", function() {
+			myAudio.play();
+		}, true);
 		myAudio.currentTime = 30;
-		myAudio.play();
 	var stop = performance.now();
 	$("#info").text(stop - start);
 		setTimeout(function() {
