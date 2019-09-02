@@ -48,16 +48,16 @@ $("#pause").click(function() {
 $("#play5s").click(function() {
 	
 	myAudio.play();
-	setTimeout(function() {
+	var to1 = setTimeout(function() {
 		myAudio.pause();
 	}, 1000);
 	
-	setTimeout(function() {
+	var to2 = setTimeout(function() {
 
 		myAudio.currentTime = 30;
 		
 		myAudio.play();
-		setTimeout(function() {
+		var to3 = setTimeout(function() {
 			myAudio.pause();
 		}, 1000);
 	}, 2000);
