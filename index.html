@@ -22,7 +22,7 @@
 <p>&nbsp;
 <h2 id="play5s">Play "Number 15"</h2>
 <p id="info">...
-<p>[2.09.2019 17:55]
+<p>[2.09.2019 18:16]
 
 
 <script>
@@ -45,16 +45,17 @@ $("#pause").click(function() {
 
 // Ok Отрывок из длинного файла
 $("#play5s").click(function() {
-	var start = performance.now();
-		myAudio.addEventListener("seeked", function() {
+	myAudio.addEventListener("seeked", function() {
+		var start = performance.now();
 			myAudio.play();
-		}, true);
-		myAudio.currentTime = 30;
-	var stop = performance.now();
-	$("#info").text(stop - start);
-		setTimeout(function() {
-			myAudio.pause();
-		}, 1000);
+		var stop = performance.now();
+		$("#info").text(stop - start);
+	}, true);
+	myAudio.currentTime = 30;
+	
+	setTimeout(function() {
+		myAudio.pause();
+	}, 1000);
 });
 
 </script>
